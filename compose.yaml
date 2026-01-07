@@ -1,0 +1,17 @@
+services:
+  neo4j:
+    build:
+      context: ./neo4j
+      dockerfile: Dockerfile
+    volumes:
+      - neo4j-data-volume:/data
+      - ./neo4j/logs:/logs
+      - ./neo4j/conf:/conf
+    ports:
+      - 7474:7474 # HTTP
+      - 7687:7687 # Bolt
+    environment:
+      - NEO4J_AUTH=none
+
+volumes:
+  neo4j-data-volume:
