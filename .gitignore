@@ -1,4 +1,8 @@
 .vscode
 
+# neo4j
 neo4j/conf
 neo4j/logs
+
+# client/python
+venv
